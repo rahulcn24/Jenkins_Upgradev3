@@ -3,13 +3,13 @@ job('first maven project via dsl'){
 	scm{
 		git("https://github.com/rahulcn24/Jenkins_Upgradev3.git")
 	}
-	trigger{
+	triggers{
 		scm('* * * * *')
 	}
 	steps{
 		maven('clean package', 'maven-samples/single-module/pom.xml')
 	}
-	publisher{
+	publishers{
 		archiveArtifacts '**/*.jar'
 	}
 }

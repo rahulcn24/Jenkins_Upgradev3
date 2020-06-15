@@ -12,5 +12,10 @@ pipeline{
 				}
 			}
 		}
+		stage ('deploy application to dev') {
+			steps {
+				build job : 'deploy application'
+			}
+		}
 	}
 }
